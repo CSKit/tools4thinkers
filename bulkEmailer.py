@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-
+# Takes an Excel file as input. Format should be first name, last name, recipient email, category
 import sys
 import xlrd
 from smtplib import SMTP
@@ -45,7 +45,7 @@ def prepare_plaintext_message_for(first, last, category):
 	return message
 
 def get_send_data():
-	wb = xlrd.open_workbook('/Users/noah/Documents/Personal/cso_send_list.xlsx')
+	wb = xlrd.open_workbook(#insert your filepath here)
 	sh = wb.sheet_by_index(0)
 	email_list = []
 	for rownum in range(sh.nrows):
